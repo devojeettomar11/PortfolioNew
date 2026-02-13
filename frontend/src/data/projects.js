@@ -1,26 +1,33 @@
 export const projects = [
   {
-    title: "Weather Forecast App",
-    category: "Frontend",
-    description: "Modern weather forecast app with live API, recent searches, and responsive UI.",
-    tech: ["HTML", "CSS", "JS", "API"],
-    github: "https://github.com/devojeettomar11",
-    live: "#"
-  },
+    
+  title: "YouTube Clone (Full Stack)",
+  category: "Fullstack",
+  description:
+    "A full-stack YouTube Clone with authentication, video management, search, and responsive UI. Backend built with Node.js, Express and MongoDB.",
+  tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+  github: "https://github.com/devojeettomar11/youtube-clone",
+ // live: "YOUR_VERCEL_LINK"
+}
+,
+  
+   {
+  title: "ShoppyGlobe (E-Commerce Full Stack)",
+  category: "Fullstack",
+  description:
+    "A full-stack e-commerce website with cart, checkout, authentication, and database support. Built using MERN stack.",
+  tech: ["React", "Redux", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+  github: "https://github.com/devojeettomar11/shoppyglobe",
+ // live: "YOUR_VERCEL_LINK"
+}
+,
   {
-    title: "Student Registration System",
+    title: "Portfolio Website (MERN + Admin Dashboard)",
     category: "Fullstack",
-    description: "CRUD based student registration system with validations and local storage.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/devojeettomar11",
-    live: "#"
-  },
-  {
-    title: "Dynamic Kanban Board",
-    category: "Frontend",
-    description: "Drag and drop kanban board with localStorage persistence.",
-    tech: ["React", "Tailwind"],
-    github: "https://github.com/devojeettomar11",
-    live: "#"
+    description:
+      "A premium portfolio website with enquiry form connected to MongoDB database and an admin dashboard to manage enquiries.",
+    tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/devojeettomar11/PortfolioNew",
+  //  live: "https://portfolio.vercel.app"
   }
 ];

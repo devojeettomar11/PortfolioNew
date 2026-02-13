@@ -1,50 +1,67 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "About", link: "#about" },
+    { name: "Skills", link: "#skills" },
+    { name: "Projects", link: "#projects" },
+    { name: "Certificates", link: "#certificates" },
+    { name: "Contact", link: "#contact" }
+  ];
 
   return (
-    <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-md z-50 px-6 md:px-12 py-4 flex justify-between items-center border-b border-white/10">
-      
-      {/* Logo */}
-      <h1 className="text-white text-2xl font-extrabold tracking-wide">
-        Devojeet<span className="text-purple-400">.</span>
-      </h1>
+    <nav className="fixed top-0 w-full z-50 bg-white/70 dark:bg-black/40 backdrop-blur-lg border-b border-black/10 dark:border-white/10">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+        
+        {/* Logo */}
+        <h1 className="text-2xl font-extrabold text-black dark:text-white">
+          Devojeet<span className="text-purple-500">.</span>
+        </h1>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-8 text-white font-medium">
-        <a href="#about" className="hover:text-purple-400 transition">About</a>
-        <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
-        <a href="#projects" className="hover:text-purple-400 transition">Projects</a>
-        <a href="#certificates" className="hover:text-purple-400 transition">Certificates</a>
-        <a href="#contact" className="hover:text-purple-400 transition">Contact</a>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8 font-semibold text-gray-700 dark:text-gray-300">
+          {navLinks.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              className="hover:text-purple-500 transition"
+            >
+              {item.name}
+            </a>
+          ))}
 
-        {/* Theme Toggle */}
-        <ThemeToggle />
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-black dark:text-white"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      <div className="md:hidden flex items-center gap-3">
-        <ThemeToggle />
-
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white"
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black/90 backdrop-blur-md flex flex-col items-center py-6 gap-6 text-white font-semibold md:hidden border-b border-white/10">
-          <a onClick={() => setMenuOpen(false)} href="#about" className="hover:text-purple-400">About</a>
-          <a onClick={() => setMenuOpen(false)} href="#skills" className="hover:text-purple-400">Skills</a>
-          <a onClick={() => setMenuOpen(false)} href="#projects" className="hover:text-purple-400">Projects</a>
-          <a onClick={() => setMenuOpen(false)} href="#certificates" className="hover:text-purple-400">Certificates</a>
-          <a onClick={() => setMenuOpen(false)} href="#contact" className="hover:text-purple-400">Contact</a>
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-white/90 dark:bg-black/80 backdrop-blur-lg border-t border-black/10 dark:border-white/10 px-6 py-6 space-y-5 text-center font-semibold text-gray-800 dark:text-gray-200">
+          {navLinks.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              onClick={() => setIsOpen(false)}
+              className="block py-2 rounded-lg hover:bg-purple-500/10 hover:text-purple-500 transition"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       )}
     </nav>
