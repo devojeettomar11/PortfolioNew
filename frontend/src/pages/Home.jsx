@@ -169,42 +169,49 @@ export default function Home() {
       </section>
 
       {/* CERTIFICATES */}
-      <section id="certificates" className="py-24 px-6 md:px-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center">
-          Certificates
-        </h2>
+    {/* CERTIFICATES */}
+<section id="certificates" className="py-24 px-6 md:px-10 max-w-6xl mx-auto">
+  <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center">
+    Certificates
+  </h2>
 
-        <p className="text-gray-400 text-center mt-6 max-w-2xl mx-auto text-lg">
-          Certifications and achievements that highlight my learning journey.
-        </p>
+  <p className="text-gray-400 text-center mt-6 max-w-2xl mx-auto text-lg">
+    My professional certifications from Internshala training programs.
+  </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-14">
-          {certificates.map((cert, index) => (
-            <div
-              key={index}
-              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-105 transition duration-300 shadow-lg shadow-purple-500/10"
-            >
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="w-full h-52 object-cover"
-              />
+  <div className="grid md:grid-cols-2 gap-8 mt-14">
+    {certificates.map((cert, index) => (
+      <div
+        key={index}
+        className="bg-white/5 border border-white/10 rounded-2xl p-8 shadow-lg shadow-purple-500/10 hover:scale-105 transition duration-300"
+      >
+        <div className="flex justify-between items-center">
+          <span className="text-sm font-semibold px-4 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30">
+            {cert.tag}
+          </span>
 
-              <div className="p-6">
-                <h3 className="text-white font-bold text-xl">{cert.title}</h3>
-
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  className="text-purple-400 hover:text-purple-300 mt-3 inline-block font-semibold"
-                >
-                  View Certificate →
-                </a>
-              </div>
-            </div>
-          ))}
+          <span className="text-sm text-gray-400 font-medium">
+            {cert.issuer}
+          </span>
         </div>
-      </section>
+
+        <h3 className="text-white font-bold text-xl mt-6 leading-snug">
+          {cert.title}
+        </h3>
+
+        <a
+          href={cert.link}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block mt-6 text-purple-400 hover:text-purple-300 font-semibold"
+        >
+          View Certificate →
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* CONTACT */}
       <section id="contact" className="py-24 px-6 md:px-10 max-w-6xl mx-auto">
