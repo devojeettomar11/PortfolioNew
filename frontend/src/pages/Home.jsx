@@ -75,8 +75,8 @@ export default function Home() {
           </a>
 
           <a
-            href="/Devojeet_Tomar_Resume.pdf"
-            download="Devojeet_Tomar_Resume.pdf"
+            href="/DEVOJEET_TOMAR_LATEST.pdf"
+            download="DEVOJEET_TOMAR_LATEST.pdf"
             className="border border-purple-400 hover:bg-purple-500/20 px-8 py-3 rounded-xl text-purple-300 font-semibold transition"
           >
             Download Resume
