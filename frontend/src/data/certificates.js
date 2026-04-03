@@ -1,9 +1,9 @@
 export const certificates = [
   {
-    title: "HTML & CSS Certificate (Internshala)",
+    title: " Full Stack Web Development (6 Months) Internshala Trainings",
     issuer: "Internshala",
-    link: "https://trainings.internshala.com/s/v/3760876/593cc87d",
-    tag: "Frontend"
+    link: "https://trainings.internshala.com/view_certificate/4snsx12gcd0/g7i1liccgd8/",
+    tag: "Fullstack Development"
   },
   {
     title: "JavaScript Certificate (Internshala)",

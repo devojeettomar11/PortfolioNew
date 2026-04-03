@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "Clinic Dashboard",
+    category: "Frontend",
+    description:
+      "A comprehensive clinic management dashboard with modules for appointments, lab tests, packages, and revenue tracking. Includes JWT-based authentication and protected routes.",
+    tech: ["React.js", "Tailwind CSS", "Axios", "JWT"],
+    github: "https://github.com/devojeettomar11/Clinic-Dashboard",
+  },
+  {
+    title: "Finance Dashboard",
+    category: "Frontend",
+    description:
+      "A responsive finance dashboard to visualize revenue, transactions, and performance trends using interactive charts and dynamic API data.",
+    tech: ["React.js", "Tailwind CSS", "Chart.js", "Axios"],
+    github: "https://github.com/devojeettomar11/Finance-Dashboard",
+  },
+  {
     
   title: "YouTube Clone (Full Stack)",
   category: "Fullstack",
